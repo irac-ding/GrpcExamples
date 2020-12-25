@@ -45,10 +45,17 @@ namespace Client
             // the client to compress the request.
             // This metadata is only used in the client is not sent as a header to the server.
             var metadata = new Metadata();
-            metadata.Add("grpc-internal-encoding-request", "gzip");
-
+            metadata.Add("grpc-internal-encoding-request", "gzip");       
             var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" }, headers: metadata);
             Console.WriteLine("Greeting: " + reply.Message);
+            AsyncServerStreamingCall<HelloReply> streamReplay = client.SayHellos(new HelloRequest { Name = "GreeterClient" }, headers: metadata);
+    
+            while (await streamReplay.ResponseStream.MoveNext())
+            {
+                string message = streamReplay.ResponseStream.Current.Message;
+                Console.WriteLine(message);
+            }
+         
         }
     }
 }

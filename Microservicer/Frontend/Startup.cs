@@ -46,7 +46,8 @@ namespace Frontend
             {
                 // Tye adds the address of the backend app to configuration.
                 // GetServiceUri is a Tye helper method of retrieving it.
-                c.Address = Configuration.GetServiceUri("backend");
+                //c.Address = Configuration.GetServiceUri("backend");
+                c.Address = new Uri("https://localhost:5001");
             });
         }
 
