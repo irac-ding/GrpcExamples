@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
     <Protobuf Include="..\Proto\common.proto" Link="Protos\common.proto" />
 
     <PackageReference Include="Google.Protobuf" Version="3.14.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.34.0"/>
+    <PackageReference Include="Grpc.Tools" Version="2.34.0" />
 
   </ItemGroup>
 
