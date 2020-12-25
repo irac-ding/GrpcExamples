@@ -7,8 +7,9 @@
   <ItemGroup>
     <Protobuf Include="..\Proto\certify.proto" GrpcServices="Server" Link="Protos\certify.proto" />
 
-    <PackageReference Include="Grpc.AspNetCore" Version="$(GrpcDotNetPackageVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="$(MicrosoftAspNetCoreAppPackageVersion)" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="5.0.1" />
   </ItemGroup>
 
 </Project>

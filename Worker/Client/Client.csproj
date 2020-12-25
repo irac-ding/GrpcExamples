@@ -7,11 +7,11 @@
 
   <ItemGroup>
     <Protobuf Include="..\Proto\count.proto" GrpcServices="Client" Link="Protos\count.proto" />
-
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="$(MicrosoftExtensionsPackageVersion)" />
-    <PackageReference Include="Google.Protobuf" Version="$(GoogleProtobufPackageVersion)" />
-    <PackageReference Include="Grpc.Net.ClientFactory" Version="$(GrpcDotNetPackageVersion)" />
-    <PackageReference Include="Grpc.Tools" Version="$(GrpcPackageVersion)" PrivateAssets="All" />
+    <PackageReference Include="Google.Protobuf" Version="3.14.0" />
+    <PackageReference Include="Grpc.Core" Version="2.34.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.34.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.34.0" />
   </ItemGroup>
   
 </Project>

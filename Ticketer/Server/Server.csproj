@@ -7,8 +7,9 @@
   <ItemGroup>
     <Protobuf Include="..\Proto\ticket.proto" GrpcServices="Server" Link="Protos\ticket.proto" />
 
-    <PackageReference Include="Grpc.AspNetCore" Version="$(GrpcDotNetPackageVersion)" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftAspNetCoreAppPackageVersion)" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
   </ItemGroup>
 
 </Project>

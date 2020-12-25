@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.140" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj" />
-    
-    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="$(ProtobufNetGrpcPackageVersion)" />
   </ItemGroup>
 
 </Project>

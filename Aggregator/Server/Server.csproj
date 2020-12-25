@@ -5,17 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+    <PackageReference Include="OpenTelemetry" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="..\Proto\aggregate.proto" GrpcServices="Server" Link="Protos\aggregate.proto" />
     <Protobuf Include="..\Proto\greet.proto" GrpcServices="Both" Link="Protos\greet.proto" />
     <Protobuf Include="..\Proto\count.proto" GrpcServices="Both" Link="Protos\count.proto" />
-
-    <PackageReference Include="Grpc.AspNetCore" Version="$(GrpcDotNetPackageVersion)" />
-
-    <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="$(OpenTelemetryPackageVersion)" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetryPackageVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryPackageVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" Version="$(OpenTelemetryPackageVersion)" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryPackageVersion)" />
   </ItemGroup>
 
 </Project>
