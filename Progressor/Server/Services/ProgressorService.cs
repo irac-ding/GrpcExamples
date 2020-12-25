@@ -38,9 +38,9 @@ namespace Server
 
         public override async Task RunHistory(Empty request, IServerStreamWriter<HistoryResponse> responseStream, ServerCallContext context)
         {
-            var monarches = await File.ReadAllLinesAsync("Monarchs-of-England.txt");
+            String[] monarches = await File.ReadAllLinesAsync("Monarchs-of-England.txt");
 
-            var processedMonarches = new List<string>();
+            List<string> processedMonarches = new List<string>();
             for (int i = 0; i < monarches.Length; i++)
             {
                 // Simulate complex work
