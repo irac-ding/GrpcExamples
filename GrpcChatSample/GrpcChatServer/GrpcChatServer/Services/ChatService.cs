@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Grpc.Core;
 
 using Chat;
+using System;
 
 namespace GrpcChatServer
 {
@@ -13,7 +14,7 @@ namespace GrpcChatServer
     {
         private readonly ChatRoom _chatroomService;
         private readonly ILogger<ChatService> _logger;
-
+        private string flag = Guid.NewGuid().ToString("N");
         public ChatService(ChatRoom chatRoomService, ILogger<ChatService> logger)
         {
             _chatroomService = chatRoomService;
@@ -22,6 +23,7 @@ namespace GrpcChatServer
 
         public override async Task join(IAsyncStreamReader<Message> requestStream, IServerStreamWriter<Message> responseStream, ServerCallContext context)
         {
+            Console.WriteLine($"falg: {flag}");
             if (!await requestStream.MoveNext()) return;
 
             do

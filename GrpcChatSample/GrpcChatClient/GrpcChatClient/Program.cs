@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 using Grpc.Net.Client;
 using Chat;
+using static Chat.ChatRoom;
+using Grpc.Core;
 
 namespace GrpcChatClient
 {
@@ -16,10 +18,10 @@ namespace GrpcChatClient
 
             var userName = Console.ReadLine();
 
-            var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new ChatRoom.ChatRoomClient(channel);
+            GrpcChannel channel = GrpcChannel.ForAddress("https://localhost:5001");
+            ChatRoomClient client = new ChatRoom.ChatRoomClient(channel);
 
-            using (var chat = client.join())
+            using (AsyncDuplexStreamingCall<Message,Message> chat = client.join())
             {
                 _ = Task.Run(async () =>
                 {
